@@ -1,23 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import StatusWeather from './components/StatusWeather/StatusWeather';
+import Lamp from './components/Lamp/Lamp';
+import Pizza from './components/Pizza/Pizza';
+import FormSandName from './components/FormSandName/FormSandName';
 
 function App() {
+  const elem = React.createElement('h1', null, 'Здравствуйте, пользователь');
+  const ingredients = ["Мука", "Вода", "Яйца", "Томатная паста", "Пеперони", "Моцарелла"];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {elem}
+
+      <hr />
+
+      <StatusWeather temperature={19} />
+
+      <hr />
+      
+      <Lamp />
+
+      <hr />
+
+      <Pizza ingredients={ingredients} />
+
+      <hr />
+
+      <FormSandName />
     </div>
   );
 }
